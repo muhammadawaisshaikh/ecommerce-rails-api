@@ -27,6 +27,12 @@ class V1::ProductsController < ApplicationController
         end
     end
 
+    def destroy
+        product = Product.find(params[:id])
+        product.destroy
+        head 204
+    end
+
     private
         
     def product_params
