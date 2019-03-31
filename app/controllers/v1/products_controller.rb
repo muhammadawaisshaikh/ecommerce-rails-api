@@ -10,6 +10,7 @@ class V1::ProductsController < ApplicationController
           render json: product, status: :created
         else
           render json: { errors: product.errors }, status:    :unprocessable_entity
+        end
     end
         
 
@@ -34,9 +35,9 @@ class V1::ProductsController < ApplicationController
     end
 
     private
-        
+
     def product_params
         params.require(:product).permit(:name, :price, :description, :category_id, :stock)
     end
-    
-  end
+
+end
